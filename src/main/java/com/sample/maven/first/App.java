@@ -1,7 +1,7 @@
 package com.sample.maven.first;
 
 /**
- * Hello world5!
+ * Hello world6!
  *
  */
 public class App 
