@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    environment {
+        PATH = "/opt/apache-maven-3.8.6/bin:$PATH"
+    }
+    stages {
+        stage('Git Clone Stage') {
+            steps {
+                git branch: 'main', credentialsId: 'gittest', url: 'https://github.com/sivaprasadkmastech/mavenproject.git'
+            }
+        }
+        stage('Build Stage') {
+            steps {
+                sh "mvn clean install"
+            }
+        }
+	      stage('SonarScanner Stage') {
+            steps {
+                withSonarQubeEnv('Sonar') {
+                sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar"
+               }
+            }
+        }
+    }
+}
+        
