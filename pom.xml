@@ -6,7 +6,7 @@
 
   <groupId>com.sample.maven.first</groupId>
   <artifactId>com.sample.maven.first</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   
   <name>com.sample.maven.first</name>
   <!-- FIXME change it to the project's website -->
